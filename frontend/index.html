@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1><i class="fas fa-comment-dots"></i> Simple Chat</h1>
+            <p>Private one-to-one real-time messaging</p>
+        </header>
+
+        <!-- Login Section -->
+        <div id="login-section" class="card">
+            <h2>Join Chat Room</h2>
+            
+            <div class="form-group">
+                <label for="username">Your Name:</label>
+                <input type="text" id="username" placeholder="Enter your name (e.g., John)">
+            </div>
+            
+            <div class="form-group">
+                <label for="roomId">Room Code:</label>
+                <input type="text" id="roomId" placeholder="Enter room code (e.g., chat123)">
+                <small>Share this exact code with your friend</small>
+            </div>
+            
+            <button id="join-btn" class="btn">
+                <i class="fas fa-sign-in-alt"></i> Join Chat
+            </button>
+        </div>
+
+        <!-- Chat Section (hidden initially) -->
+        <div id="chat-section" class="card" style="display: none;">
+            <div class="chat-header">
+                <h2>Room: <span id="room-display">---</span></h2>
+                <div class="status">
+                    <span id="connection-status">
+                        <i class="fas fa-circle"></i> Offline
+                    </span>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="messages-container">
+                <div id="messages"></div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="input-area">
+                <input type="text" id="message-input" placeholder="Type your message..." disabled>
+                <button id="send-btn" class="btn" disabled>
+                    <i class="fas fa-paper-plane"></i> Send
+                </button>
+            </div>
+            
+            <!-- Room Info -->
+            <div class="room-info">
+                <p><i class="fas fa-users"></i> Users in room: <span id="user-count">1</span></p>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions card">
+            <h3><i class="fas fa-info-circle"></i> How to Use</h3>
+            <ol>
+                <li>Enter your name and a room code</li>
+                <li>Share the same room code with another person</li>
+                <li>Click "Join Chat" to start messaging</li>
+                <li>Messages are private and saved in database</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Socket.io Client Library -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <!-- Our JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

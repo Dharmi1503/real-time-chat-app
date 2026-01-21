@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/        # ← IGNORES the huge node_modules folder
+npm-debug.log*      # ← IGNORES npm error logs
+
+# Environment variables
+.env                # ← IGNORES file with passwords (MongoDB URI)
+.env.local          # ← IGNORES local environment file
+
+# MongoDB
+data/               # ← IGNORES local MongoDB data files
+*.log               # ← IGNORES all log files
+
+# IDE files
+.vscode/            # ← IGNORES Visual Studio Code settings
+.idea/              # ← IGNORES IntelliJ IDEA settings
+*.swp               # ← IGNORES Vim swap files
+*.swo               # ← IGNORES Vim swap files
+
+# OS files
+.DS_Store           # ← IGNORES Mac system file
+Thumbs.db           # ← IGNORES Windows thumbnail file
+
+# Backend build
+dist/               # ← IGNORES compiled JavaScript
+coverage/           # ← IGNORES test coverage reports
